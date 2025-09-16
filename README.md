@@ -31,5 +31,4 @@ Student Helper – це зручний застосунок для студен�
 •	Вітик Катерина
 
 
-<img width="468" height="645" alt="image" src="https://github.com/user-attachments/assets/57e25a25-eeaa-4195-9603-a596745e6262" />
 
