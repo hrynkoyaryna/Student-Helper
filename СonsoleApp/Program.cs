@@ -1,8 +1,55 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using BLL.Abstractions;
+using BLL.CQRS.Queries;
+using BLL.Services;
+using DAL.Data;
+using DAL.Interfaces;
+using DAL.Repositories;
+using MediatR;
+using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using StudentHelper.BLL.CQRS.Queries;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+
+var host = Host.CreateDefaultBuilder(args)
+    .ConfigureServices((ctx, services) =>
+    {
+        // EF Core (тимчасово — жорстко, потім винеси в appsettings.json)
+        services.AddDbContext<AppDbContext>(opt =>
+            opt.UseNpgsql("Host=localhost;Database=Student_Helper;Username=postgres;Password=Kvitochka06"));
+
+        // DAL
+        services.AddScoped<IUserRepository, UserRepository>();
+
+        // BLL
+        services.AddScoped<IUserService, UserService>();
+
+        // MediatR
+        services.AddMediatR(cfg =>
+            cfg.RegisterServicesFromAssembly(typeof(GetUsersQuery).Assembly));
+    })
+    .Build();
+using var scope = host.Services.CreateScope();
+var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
+
+var newId = await mediator.Send(new BLL.CQRS.Commands.CreateUserCommand("Kate", "k@k.com"));
+var one = await mediator.Send(new BLL.CQRS.Queries.GetUserByIdQuery(newId));
+Console.WriteLine(one is null ? "not found" : $"{one.Id} {one.Name} {one.Email}");
+
+
+// Демо: запит і команда через MediatR
+using var scope = host.Services.CreateScope();
+var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
+
+var list = await mediator.Send(new GetUsersQuery());
+Console.WriteLine($"Users via MediatR: {list.Count}");
+
+await host.RunAsync();
+
 
 class Program
 {

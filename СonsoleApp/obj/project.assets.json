@@ -338,11 +338,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tetiana\\source\\repos\\StudentHelper\\StudentHelper.csproj",
+      "projectUniqueName": "C:\\Users\\Tetiana\\source\\repos\\Student-Helper\\BLL\\СonsoleApp\\StudentHelper.csproj",
       "projectName": "StudentHelper",
-      "projectPath": "C:\\Users\\Tetiana\\source\\repos\\StudentHelper\\StudentHelper.csproj",
+      "projectPath": "C:\\Users\\Tetiana\\source\\repos\\Student-Helper\\BLL\\СonsoleApp\\StudentHelper.csproj",
       "packagesPath": "C:\\Users\\Tetiana\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tetiana\\source\\repos\\StudentHelper\\obj\\",
+      "outputPath": "C:\\Users\\Tetiana\\source\\repos\\Student-Helper\\BLL\\СonsoleApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -402,7 +402,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

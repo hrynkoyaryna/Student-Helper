@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IvWKeCkop88=",
+  "dgSpecHash": "vUwHrI/J06Q=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tetiana\\source\\repos\\StudentHelper\\StudentHelper.csproj",
+  "projectFilePath": "C:\\Users\\Tetiana\\source\\repos\\Student-Helper\\BLL\\СonsoleApp\\StudentHelper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tetiana\\.nuget\\packages\\microsoft.data.sqlite\\9.0.10\\microsoft.data.sqlite.9.0.10.nupkg.sha512",
     "C:\\Users\\Tetiana\\.nuget\\packages\\microsoft.data.sqlite.core\\9.0.10\\microsoft.data.sqlite.core.9.0.10.nupkg.sha512",
