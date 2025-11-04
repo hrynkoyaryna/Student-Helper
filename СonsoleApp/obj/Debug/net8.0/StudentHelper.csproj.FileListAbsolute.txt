@@ -39,3 +39,12 @@ C:\Users\Tetiana\source\repos\StudentHelper\obj\Debug\net8.0\refint\StudentHelpe
 C:\Users\Tetiana\source\repos\StudentHelper\obj\Debug\net8.0\StudentHelper.pdb
 C:\Users\Tetiana\source\repos\StudentHelper\obj\Debug\net8.0\StudentHelper.genruntimeconfig.cache
 C:\Users\Tetiana\source\repos\StudentHelper\obj\Debug\net8.0\ref\StudentHelper.dll
+C:\Users\user\Desktop\3 курс\ПІ\Student-Helper\СonsoleApp\obj\Debug\net8.0\StudentHelper.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\3 курс\ПІ\Student-Helper\СonsoleApp\obj\Debug\net8.0\StudentHelper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\3 курс\ПІ\Student-Helper\СonsoleApp\obj\Debug\net8.0\StudentHelper.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\3 курс\ПІ\Student-Helper\СonsoleApp\obj\Debug\net8.0\StudentHelper.AssemblyInfo.cs
+C:\Users\user\Desktop\3 курс\ПІ\Student-Helper\СonsoleApp\obj\Debug\net8.0\StudentHelper.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\3 курс\ПІ\Student-Helper\СonsoleApp\obj\Debug\net8.0\StudentHelper.sourcelink.json
+C:\Users\user\Desktop\3 курс\ПІ\Student-Helper\СonsoleApp\obj\Debug\net8.0\StudentHelper.dll
+C:\Users\user\Desktop\3 курс\ПІ\Student-Helper\СonsoleApp\obj\Debug\net8.0\refint\StudentHelper.dll
+C:\Users\user\Desktop\3 курс\ПІ\Student-Helper\СonsoleApp\obj\Debug\net8.0\StudentHelper.pdb
