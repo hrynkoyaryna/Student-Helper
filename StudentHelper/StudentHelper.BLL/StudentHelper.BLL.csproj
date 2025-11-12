@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6362B83-68EE-4B87-931B-DEB78DDA8629}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StudentHelper.BLL</RootNamespace>
+    <AssemblyName>StudentHelper.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstractions\IExamService.cs" />
+    <Compile Include="Abstractions\IGroupAcademicService.cs" />
+    <Compile Include="Abstractions\INoteService.cs" />
+    <Compile Include="Abstractions\INotificationSettingService.cs" />
+    <Compile Include="Abstractions\ISubjectService.cs" />
+    <Compile Include="Abstractions\ITaskService.cs" />
+    <Compile Include="CQRS\Exams\CreateExamCommand.cs" />
+    <Compile Include="CQRS\Exams\DeleteExamCommand.cs" />
+    <Compile Include="CQRS\Exams\GetUpcomingExamsQuery.cs" />
+    <Compile Include="CQRS\Exams\GetUserExamsQuery.cs" />
+    <Compile Include="CQRS\Exams\UpdateExamCommand.cs" />
+    <Compile Include="CQRS\Groups\GetGroupByCodeQuery.cs" />
+    <Compile Include="CQRS\Groups\GetGroupsByFacultyQuery.cs" />
+    <Compile Include="CQRS\Handlers\Exams\CreateExamCommandHandler.cs" />
+    <Compile Include="CQRS\Handlers\Exams\DeleteExamCommandHandler.cs" />
+    <Compile Include="CQRS\Handlers\Exams\GetUpcomingExamsQueryHandler.cs" />
+    <Compile Include="CQRS\Handlers\Exams\GetUserExamsQueryHandler.cs" />
+    <Compile Include="CQRS\Handlers\Exams\UpdateExamCommandHandler.cs" />
+    <Compile Include="CQRS\Handlers\Groups\GetGroupByCodeQueryHandler.cs" />
+    <Compile Include="CQRS\Handlers\Groups\GetGroupsByFacultyQueryHandler.cs" />
+    <Compile Include="CQRS\Handlers\Notes\CreateNoteCommandHandler.cs" />
+    <Compile Include="CQRS\Handlers\Notes\DeleteNoteCommandHandler.cs" />
+    <Compile Include="CQRS\Handlers\Notes\GetPinnedNotesQueryHandler.cs" />
+    <Compile Include="CQRS\Handlers\Notes\GetUserNotesQueryHandler.cs" />
+    <Compile Include="CQRS\Handlers\Notes\UpdateNoteCommandHandler.cs" />
+    <Compile Include="CQRS\Handlers\Notifications\GetNotificationSettingsQueryHandler.cs" />
+    <Compile Include="CQRS\Handlers\Notifications\UpdateNotificationSettingsCommandHandler.cs" />
+    <Compile Include="CQRS\Handlers\Subjects\GetAllSubjectsQueryHandler.cs" />
+    <Compile Include="CQRS\Handlers\Subjects\GetSubjectByIdQueryHandler.cs" />
+    <Compile Include="CQRS\Handlers\Subjects\GetSubjectByShortNameQueryHandler.cs" />
+    <Compile Include="CQRS\Handlers\Tasks\CreateTaskCommandHandler.cs" />
+    <Compile Include="CQRS\Handlers\Tasks\DeleteTaskCommandHandler.cs" />
+    <Compile Include="CQRS\Handlers\Tasks\GetUserTasksByStatusQueryHandler.cs" />
+    <Compile Include="CQRS\Handlers\Tasks\GetUserTasksQueryHandler.cs" />
+    <Compile Include="CQRS\Handlers\Tasks\UpdateTaskCommandHandler.cs" />
+    <Compile Include="CQRS\Notes\CreateNoteCommand.cs" />
+    <Compile Include="CQRS\Notes\DeleteNoteCommand.cs" />
+    <Compile Include="CQRS\Notes\GetPinnedNotesQuery.cs" />
+    <Compile Include="CQRS\Notes\GetUserNotesQuery.cs" />
+    <Compile Include="CQRS\Notes\UpdateNoteCommand.cs" />
+    <Compile Include="CQRS\Notifications\GetNotificationSettingsQuery.cs" />
+    <Compile Include="CQRS\Notifications\UpdateNotificationSettingsCommand.cs" />
+    <Compile Include="CQRS\Subjects\GetAllSubjectsQuery.cs" />
+    <Compile Include="CQRS\Subjects\GetSubjectByIdQuery.cs" />
+    <Compile Include="CQRS\Subjects\GetSubjectByShortNameQuery.cs" />
+    <Compile Include="CQRS\Tasks\CreateTaskCommand.cs" />
+    <Compile Include="CQRS\Tasks\DeleteTaskCommand.cs" />
+    <Compile Include="CQRS\Tasks\GetUserTasksByStatusQuery.cs" />
+    <Compile Include="CQRS\Tasks\GetUserTasksQuery.cs" />
+    <Compile Include="CQRS\Tasks\UpdateTaskCommand.cs" />
+    <Compile Include="DTOs\ExamDto.cs" />
+    <Compile Include="DTOs\GroupAcademicDto.cs" />
+    <Compile Include="DTOs\NoteDto.cs" />
+    <Compile Include="DTOs\NotificationSettingDto.cs" />
+    <Compile Include="DTOs\SubjectDto.cs" />
+    <Compile Include="DTOs\TaskDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ExamService.cs" />
+    <Compile Include="Services\GroupAcademicService.cs" />
+    <Compile Include="Services\NoteService.cs" />
+    <Compile Include="Services\NotificationSettingService.cs" />
+    <Compile Include="Services\SubjectService.cs" />
+    <Compile Include="Services\TaskService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{12357d34-2a02-1ecd-bc6c-d84addc1a72e}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+  </ItemGroup>
+  
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

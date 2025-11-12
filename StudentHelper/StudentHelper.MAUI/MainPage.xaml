@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudentHelper.MAUI.MainPage"
+             Title="Student Helper">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="20">
+
+            <Label
+                Text="Welcome to Student Helper!"
+                FontSize="24"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"/>
+
+            <Label
+                Text="Your personal academic assistant"
+                FontSize="16"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level2"/>
+
+            <Grid ColumnDefinitions="*,*"
+                    RowDefinitions="*,*,*"
+                    RowSpacing="15"
+                    ColumnSpacing="15">
+                <!-- Notes -->
+                <Frame Grid.Row="0"
+                        Grid.Column="0"
+                        BackgroundColor="#4CAF50"
+                        Padding="15">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="📝"
+                                FontSize="24"
+                                HorizontalOptions="Center"/>
+                        <Label Text="Notes"
+                                FontSize="16"
+                                TextColor="White"
+                                HorizontalOptions="Center"/>
+                        <Button Text="Open"
+                                Clicked="OnNotesClicked"
+                                BackgroundColor="White"
+                                TextColor="#4CAF50"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Tasks -->
+                <Frame Grid.Row="0"
+                        Grid.Column="1"
+                        BackgroundColor="#2196F3"
+                        Padding="15">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="✅"
+                                FontSize="24"
+                                HorizontalOptions="Center"/>
+                        <Label Text="Tasks"
+                                FontSize="16"
+                                TextColor="White"
+                                HorizontalOptions="Center"/>
+                        <Button Text="Open"
+                                Clicked="OnTasksClicked"
+                                BackgroundColor="White"
+                                TextColor="#2196F3"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Exams -->
+                <Frame Grid.Row="1"
+                        Grid.Column="0"
+                        BackgroundColor="#FF9800"
+                        Padding="15">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="📚"
+                                FontSize="24"
+                                HorizontalOptions="Center"/>
+                        <Label Text="Exams"
+                                FontSize="16"
+                                TextColor="White"
+                                HorizontalOptions="Center"/>
+                        <Button Text="Open"
+                                Clicked="OnExamsClicked"
+                                BackgroundColor="White"
+                                TextColor="#FF9800"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Calendar -->
+                <Frame Grid.Row="1"
+                        Grid.Column="1"
+                        BackgroundColor="#9C27B0"
+                        Padding="15">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="📅"
+                                FontSize="24"
+                                HorizontalOptions="Center"/>
+                        <Label Text="Calendar"
+                                FontSize="16"
+                                TextColor="White"
+                                HorizontalOptions="Center"/>
+                        <Button Text="Open"
+                                Clicked="OnCalendarClicked"
+                                BackgroundColor="White"
+                                TextColor="#9C27B0"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Settings -->
+                <Frame Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="#607D8B"
+                        Padding="15">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="⚙️"
+                                FontSize="24"
+                                HorizontalOptions="Center"/>
+                        <Label Text="Settings"
+                                FontSize="16"
+                                TextColor="White"
+                                HorizontalOptions="Center"/>
+                        <Button Text="Open"
+                                Clicked="OnSettingsClicked"
+                                BackgroundColor="White"
+                                TextColor="#607D8B"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
