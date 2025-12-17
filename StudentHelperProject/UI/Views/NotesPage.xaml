@@ -1,0 +1,79 @@
+<Page x:Class="StudentHelper.WPF.UI.Views.NotesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="White">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- HEADER -->
+        <TextBlock Text="Нотатки"
+                   Style="{StaticResource H1}"/>
+
+        <!-- SEARCH BAR -->
+        <Grid Grid.Row="1" Height="36" Margin="0,0,0,14">
+            <Border Background="White"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    CornerRadius="6">
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="#007ACC"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+            <Grid Margin="8,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="SearchBox"
+                         VerticalContentAlignment="Center"
+                         BorderThickness="0"
+                         Background="Transparent"
+                         FontSize="14"
+                         TextChanged="SearchBox_TextChanged"/>
+                <TextBlock Text="🔍"
+                           Grid.Column="1"
+                           VerticalAlignment="Center"
+                           FontSize="16"
+                           Margin="6,0,0,0"/>
+            </Grid>
+        </Grid>
+
+        <!-- NOTES LIST -->
+        <ScrollViewer Grid.Row="2" Margin="0,14,0,0">
+            <StackPanel x:Name="NotesContainer"/>
+        </ScrollViewer>
+
+        <!-- ADD BUTTON -->
+        <Button Content="Додати нотатку"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="0,0,4,4"
+                Width="150"
+                Height="40"
+                Click="AddNote_Click"
+                Background="#B3F2FF"
+                BorderBrush="Black"
+                Grid.Row="2">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#9FE0E0"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Page>

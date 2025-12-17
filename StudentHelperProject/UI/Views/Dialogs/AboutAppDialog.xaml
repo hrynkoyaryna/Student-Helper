@@ -1,0 +1,42 @@
+﻿<Window x:Class="StudentHelper.WPF.UI.Views.Dialogs.AboutAppDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Про додаток"
+        Height="230" Width="360"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="White"
+        Icon="{x:Null}">
+
+    <Border Background="White"
+            Padding="20"
+            BorderBrush="Black"
+            BorderThickness="1">
+
+        <StackPanel>
+            <TextBlock Text="Student Helper"
+                       FontSize="20"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,12"/>
+
+            <TextBlock Text="Додаток для планування розкладу, завдань, екзаменів та нотаток студента."
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,8"/>
+
+            <TextBlock Text="Версія 1.0 (демо)"
+                       Margin="0,0,0,4"/>
+
+            <TextBlock Text="Розробники: Сніжана Демко, Ярина Гринько, Христина Гогоша, Вітик Катерина, Заяць Тетяна"
+                        TextWrapping="Wrap"
+                       Margin="0,0,0,16"/>
+
+            <Button Content="Закрити"
+                    Width="90"
+                    HorizontalAlignment="Right"
+                    Style="{StaticResource DialogButton}"
+                    Click="Close_Click"/>
+        </StackPanel>
+
+    </Border>
+</Window>

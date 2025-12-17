@@ -1,0 +1,154 @@
+# Remove the line below if you want to inherit .editorconfig settings from higher directories
+root = true
+
+# All files
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = crlf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# C# files
+[*.cs]
+
+# Indentation
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+csharp_indent_block_contents = true
+
+# Spaces
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+
+# Braces
+csharp_prefer_braces = true:suggestion
+csharp_prefer_simple_using_statement = true:suggestion
+
+# Code blocks
+csharp_prefer_simple_default_expression = true:suggestion
+csharp_style_throw_expression = true:suggestion
+csharp_style_prefer_null_check_over_type_check = true:silent
+
+# Naming Conventions
+# Interfaces should be PascalCase and start with I
+dotnet_naming_rule.interfaces_should_be_begins_with_i.severity = warning
+dotnet_naming_rule.interfaces_should_be_begins_with_i.symbols = interface
+dotnet_naming_rule.interfaces_should_be_begins_with_i.style = begins_with_i
+dotnet_naming_symbols.interface.applicable_kinds = interface
+dotnet_naming_symbols.interface.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+dotnet_naming_style.begins_with_i.required_prefix = I
+dotnet_naming_style.begins_with_i.required_suffix =
+dotnet_naming_style.begins_with_i.word_separator =
+dotnet_naming_style.begins_with_i.capitalization = pascal_case
+
+# Private fields should be _camelCase
+dotnet_naming_rule.private_members_with_underscore.severity = suggestion
+dotnet_naming_rule.private_members_with_underscore.symbols = private_fields
+dotnet_naming_rule.private_members_with_underscore.style = prefix_underscore
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+dotnet_naming_style.prefix_underscore.required_prefix = _
+dotnet_naming_style.prefix_underscore.capitalization = camel_case
+
+# Classes, structs, methods, properties and events should be PascalCase
+dotnet_naming_rule.types_and_methods_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.types_and_methods_should_be_pascal_case.symbols = type_members
+dotnet_naming_rule.types_and_methods_should_be_pascal_case.style = pascal_case_style
+dotnet_naming_symbols.type_members.applicable_kinds = class,struct,interface,enum,delegate,method,property,event
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+
+# Constants should be UPPER_CASE
+dotnet_naming_rule.constants_should_be_upper_case.severity = suggestion
+dotnet_naming_rule.constants_should_be_upper_case.symbols = constants
+dotnet_naming_rule.constants_should_be_upper_case.style = upper_case_style
+dotnet_naming_symbols.constants.applicable_kinds = field
+dotnet_naming_symbols.constants.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+dotnet_naming_symbols.constants.required_modifiers = const
+dotnet_naming_style.upper_case_style.capitalization = all_upper
+
+# Local variables and parameters should be camelCase
+dotnet_naming_rule.locals_should_be_camel_case.severity = suggestion
+dotnet_naming_rule.locals_should_be_camel_case.symbols = local_variables
+dotnet_naming_rule.locals_should_be_camel_case.style = camel_case_style
+dotnet_naming_symbols.local_variables.applicable_kinds = local,parameter
+dotnet_naming_style.camel_case_style.capitalization = camel_case
+
+# Code Style Rules
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = false
+
+# StyleCop Rules (SA prefix)
+# SA0001: All diagnostics of StyleCop.CSharp.OrderingRules should be implemented in this file
+dotnet_diagnostic.SA0001.severity = hidden
+
+# SA1000: Keywords should not be followed by a space
+dotnet_diagnostic.SA1000.severity = suggestion
+
+# SA1001: Commas should not be preceded by whitespace
+dotnet_diagnostic.SA1001.severity = suggestion
+
+# SA1008: Opening parentheses should not be preceded by a space
+dotnet_diagnostic.SA1008.severity = suggestion
+
+# SA1009: Closing parentheses should not be preceded by a space
+dotnet_diagnostic.SA1009.severity = suggestion
+
+# SA1028: Code should not contain trailing whitespace
+dotnet_diagnostic.SA1028.severity = warning
+
+# SA1101: Prefix local calls with this
+dotnet_diagnostic.SA1101.severity = silent
+
+# SA1600: Elements should be documented
+dotnet_diagnostic.SA1600.severity = silent
+
+# SA1601: Partial elements should be documented
+dotnet_diagnostic.SA1601.severity = silent
+
+# SA1602: Enumeration items should be documented
+dotnet_diagnostic.SA1602.severity = silent
+
+# SA1633: File header should have copyright
+dotnet_diagnostic.SA1633.severity = silent
+
+# CA1000: Do not declare static members on generic types
+dotnet_diagnostic.CA1000.severity = warning
+
+# CA1001: Types that own disposable fields should be disposable
+dotnet_diagnostic.CA1001.severity = warning
+
+# CA1018: Mark attributes with AttributeUsageAttribute
+dotnet_diagnostic.CA1018.severity = warning
+
+# IDE Analyzers
+# IDE0001: Simplify name
+dotnet_diagnostic.IDE0001.severity = suggestion
+
+# IDE0002: Simplify member access
+dotnet_diagnostic.IDE0002.severity = suggestion
+
+# IDE0010: Add missing cases to switch
+dotnet_diagnostic.IDE0010.severity = suggestion
+
+# IDE0055: Fix indentation and spacing
+dotnet_diagnostic.IDE0055.severity = suggestion
+
+# XML Project Files
+[*.{csproj,vbproj,proj,projitems,shproj}]
+indent_size = 2
+
+# JSON Files
+[*.json]
+indent_size = 2
+
+# XAML Files
+[*.xaml]
+indent_size = 2
+
+# YAML Files
+[*.{yml,yaml}]
+indent_size = 2
