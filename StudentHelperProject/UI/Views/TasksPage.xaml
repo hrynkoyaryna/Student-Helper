@@ -1,0 +1,103 @@
+<Page x:Class="StudentHelper.WPF.UI.Views.TasksPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="White">
+
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Page.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <TextBlock Text="Завдання"
+                   Style="{StaticResource H1}"/>
+
+        <!-- Перемикачі типів завдань -->
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    Margin="0,0,0,10">
+            <RadioButton x:Name="PersonalFilter"
+                         Content="Особисте"
+                         Margin="0,0,12,0"
+                         GroupName="TypeGroup"
+                         Checked="TaskTypeChanged"/>
+            <RadioButton x:Name="StudyFilter"
+                         Content="Навчання"
+                         IsChecked="True"
+                         GroupName="TypeGroup"
+                         Checked="TaskTypeChanged"/>
+        </StackPanel>
+
+        <!-- Таби -->
+        <TabControl x:Name="Tabs"
+                    Grid.Row="2"
+                    Margin="0,0,0,10"
+                    Height="40"
+                    SelectionChanged="Tabs_SelectionChanged">
+            <TabItem Header="Поточні"/>
+            <TabItem Header="Виконані"/>
+            <TabItem Header="Прострочено"/>
+        </TabControl>
+
+        <!-- Контейнер завдань -->
+        <Border Grid.Row="3"
+                BorderBrush="Black"
+                BorderThickness="1"
+                CornerRadius="8"
+                Padding="14">
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Disabled">
+                <StackPanel>
+                    <!-- Фільтр предметів з кнопкою додавання -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                        <ComboBox x:Name="SubjectFilter"
+                                  Style="{StaticResource StandardComboBox}"
+                                  Width="180"
+                                  SelectionChanged="SubjectChanged">
+                            <ComboBoxItem Content="Всі предмети" IsSelected="True"/>
+                        </ComboBox>
+
+                        <Button Content="+"
+                                Width="34"
+                                Height="34"
+                                Margin="8,0,0,0"
+                                Background="#B3F2FF"
+                                BorderBrush="Black"
+                                BorderThickness="1"
+                                Click="AddSubject_Click"
+                                ToolTip="Додати новий предмет"/>
+                    </StackPanel>
+
+                    <!-- Список завдань -->
+                    <ItemsControl x:Name="TaskList"/>
+
+                    <!-- Додати завдання -->
+                    <TextBlock Text="Додати завдання"
+                               Foreground="DodgerBlue"
+                               Margin="0,20,0,0"
+                               FontSize="16"
+                               Cursor="Hand"
+                               MouseLeftButtonUp="AddTask_Click">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="TextDecorations" Value="Underline"/>
+                                        <Setter Property="Foreground" Value="#007ACC"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Page>
